@@ -24,6 +24,31 @@ try {
         echo "entrée supprimée";
     }
 
+    $sql = "TRUNCATE TABLE user";
+
+    if($pdo->exec($sql) !== false){
+        echo "contenu supprimé";
+    }
+
+    $sql = "INSERT INTO user (nom, prenom, rue, numero, code_postal, ville, pays, mail)
+            VALUES ('Vador', 'Dark', 'des étoiles', 1, 2000, 'de la mort', 'coté sombre', 'sith@force.sw');
+            ";
+
+    $pdo->exec($sql);
+
+    $sql = "DROP TABLE user";
+
+    if($pdo->exec($sql) !== false){
+        echo "table supprimée";
+    }
+
+    $dbName = 'exo193b';
+    $sql = "DROP DATABASE $dbName";
+
+    if($pdo->exec($sql) !== false){
+        echo "base supprimée";
+    }
+
 }
 catch (PDOException $e){
     echo "Error : " . $e->getMessage();

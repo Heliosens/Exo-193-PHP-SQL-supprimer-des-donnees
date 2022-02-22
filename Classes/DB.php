@@ -7,7 +7,7 @@
 class DB
 {
     private string $server = 'localhost';
-    private string $db = 'ut2-exo193';
+    private string $db = 'exo193b';
     private string $user = 'root';
     private string $pwd = '';
 
